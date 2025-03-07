@@ -26,7 +26,11 @@ export default function HarmonicaPortfolio() {
       {/* Background Image */}
       <div className="fixed top-0 left-0 w-full h-full -z-10">
         <img
-          src={bgs[currentTrack]}
+          src={
+            currentTrack
+              ? bgs[currentTrack]
+              : "https://i.pinimg.com/736x/99/68/e6/9968e6f1e8894e6dd69b3c4823185429.jpg"
+          }
           alt="Background"
           className="w-full h-full object-cover"
         />
