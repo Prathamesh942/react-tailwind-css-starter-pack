@@ -8,6 +8,8 @@ export default function HarmonicaPortfolio() {
     { title: "Annie's song", file: "/recordings/a.mp3" },
     { title: "Can't help falling in love", file: "/recordings/i.mp3" },
     { title: "Kal ho na ho", file: "/recordings/khnh.mp3" },
+    { title: "My heart will go on", file: "/recordings/tn.mp3" },
+    { title: "Take me home, country roads", file: "/recordings/tmhcr.mp3" },
   ];
 
   return (
