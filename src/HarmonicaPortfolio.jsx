@@ -5,11 +5,11 @@ export default function HarmonicaPortfolio() {
   const [currentTrack, setCurrentTrack] = useState(null);
   const recordings = [
     { title: "Imagine", file: "/recordings/ig.mp3" },
-    { title: "Annie's song", file: "/recordings/a.mp3" },
-    { title: "Can't help falling in love", file: "/recordings/i.mp3" },
-    { title: "Kal ho na ho", file: "/recordings/khnh.mp3" },
-    { title: "My heart will go on", file: "/recordings/tn.mp3" },
-    { title: "Take me home, country roads", file: "/recordings/tmhcr.mp3" },
+    { title: "Annie's Song", file: "/recordings/a.mp3" },
+    { title: "Can't Help Falling in Love", file: "/recordings/i.mp3" },
+    { title: "Kal Ho Na Ho", file: "/recordings/khnh.mp3" },
+    { title: "My Heart Will Go On", file: "/recordings/tn.mp3" },
+    { title: "Take Me Home, Country Roads", file: "/recordings/tmhcr.mp3" },
   ];
 
   const bgs = [
@@ -28,7 +28,11 @@ export default function HarmonicaPortfolio() {
         <img
           src={
             currentTrack
-              ? bgs[currentTrack]
+              ? bgs[
+                  recordings.indexOf(
+                    recordings.find((rec) => rec.file === currentTrack)
+                  )
+                ]
               : "https://i.pinimg.com/736x/99/68/e6/9968e6f1e8894e6dd69b3c4823185429.jpg"
           }
           alt="Background"
@@ -36,17 +40,19 @@ export default function HarmonicaPortfolio() {
         />
       </div>
 
+      {/* Audio Player */}
       {currentTrack && (
-        <div className="mt-4  bg-opacity-70 p-4 rounded-lg ">
+        <div className="mt-4 bg-opacity-70 p-4 rounded-lg">
           <audio controls autoPlay src={currentTrack} className="w-full mt-2" />
         </div>
       )}
 
+      {/* Track List */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="relative z-10 bg-opacity-80 p-6 rounded-lg "
+        className="relative z-10 bg-opacity-80 p-6 rounded-lg"
       >
         <div className="space-y-4">
           {recordings.map((rec, index) => (
@@ -57,9 +63,9 @@ export default function HarmonicaPortfolio() {
               <span className="text-lg">{rec.title}</span>
               <button
                 onClick={() => setCurrentTrack(rec.file)}
-                className="px-4 py-2 bg-white text-black rounded-lg "
+                className="px-4 py-2 bg-white text-black rounded-lg"
               >
-                Play
+                {currentTrack === rec.file ? "Pause" : "Play"}
               </button>
             </div>
           ))}
