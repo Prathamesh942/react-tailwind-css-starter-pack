@@ -26,7 +26,7 @@ export default function HarmonicaPortfolio() {
   ];
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-center text-center space-y-6 px-10 text-white">
+    <div className="relative min-h-screen flex flex-col justify-center text-center space-y-6 px-10 text-white overflow-hidden">
       {/* Background Image */}
       <div className="fixed top-0 left-0 w-full h-full -z-10 bg-[#131313]">
         {/* <img
@@ -90,6 +90,7 @@ export default function HarmonicaPortfolio() {
           ))}
         </div>
       </motion.div>
+      <img className=" fixed bottom-0 overflow-hidden" src="gr2.png" alt="" />
     </div>
   );
 }
