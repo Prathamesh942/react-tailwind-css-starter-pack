@@ -9,7 +9,7 @@ function App() {
       you back so i removed you i cant find you anymore on slowly) 😿 I assume
       you miss me too if you have opened this website intentionally, if you do
       then please can we connect on instagram ? my @prathameshhh_94 (can we talk
-      atleast once again?) ignore if you dont want to connect
+      atleast once again?)
     </div>
   );
 }
